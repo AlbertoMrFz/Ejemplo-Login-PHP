@@ -18,14 +18,13 @@ class Login
 	function comprobarLogin($userAuth, $passAuth)
 	{
 		$passMd5 = md5($passAuth);
-		$query = "SELECT * FROM tabal_usuarios WHERE email = '" . $userAuth . "' AND password = '" . $passMd5 . "';";
+		$query = "SELECT * FROM usuarios WHERE email_usuario = '" . $userAuth . "' AND password_usuario = '" . $passMd5 . "';";
 		$result = $this->conn->query($query);
 		$arrayUsuario = array();
 		if ($result->num_rows > 0)//Si ese usuario existe en la base de datos
 		{
 			$row = $result->fetch_assoc();
-			$arrayUsuario['nombre'] = $row['nombre'];
-			$arrayUsuario['apellido'] = $row['nombre'];
+			$arrayUsuario['nombre'] = $row['nombre_usuario'];
 			$arrayUsuario['email'] = $userAuth;
 			$arrayUsuario['error'] = '0';
 		}

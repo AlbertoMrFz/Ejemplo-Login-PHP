@@ -11,8 +11,8 @@ class Database
     {
         $hostElegido = "localhost";
         $passElegido = "";
-        $usuarioElegido = "";
-        $databaseElegido = "";
+        $usuarioElegido = "root";
+        $databaseElegido = "bbdd_pablo";
 
         $this->host = $hostElegido;
         $this->password = $passElegido;
